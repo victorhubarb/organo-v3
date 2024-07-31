@@ -79,9 +79,9 @@ Once you have the project setup, follow these steps to run the application:
   npm start
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
  
-
 ## Technologies Used
 ![Static Badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Static Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
