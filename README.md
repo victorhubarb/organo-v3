@@ -1,53 +1,55 @@
-# Organo v3 (Typescript) <a name="readme-top"></a>
-![Static Badge](https://img.shields.io/badge/status-completed-green?style=for-the-badge)
+# Organo (TypeScript)
 
-## Introduction
-**Organo v3** is a team management application built with **React** and **TypeScript**. This enhanced version uses TypeScript to improve type safety and development robustness, making the application easier to maintain and scale, and reducing runtime errors.
+A small team-roster app built with React and TypeScript. You fill in a form with a name, role, photo URL, start date and team, and a card for that person appears under the right team's colored section. This is the third version of the project, and it moves the earlier JavaScript version to TypeScript.
 
-## Live Application
-[Organo v3 Demonstration](https://organo-v3.vercel.app)
+**Live demo:** [organo-v3.vercel.app](https://organo-v3.vercel.app)
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Contributors](#contributors)
+## What's inside
 
-## Installation
+- **Typed props and shared models.** Each component has its own props interface, and the collaborator shape is a shared `IColaborador` interface in `src/compartilhado/interfaces`.
+- **Lifted state.** `App` owns the list of collaborators. The form reports new people up through a callback, and each team section receives only its own members, filtered by team name.
+- **Controlled form.** Every field is a controlled input built from reusable `CampoTexto` and `ListaSuspensa` components. The required fields use the native HTML `required` attribute, and the start date uses a `date` input.
+- **Teams as data.** Seven teams, each with a primary and secondary color, are defined once and used for both the dropdown and the section styling. A team with no members renders nothing.
 
-### Prerequisites
-- Node.js installed
-- Web browser
+The interface is in Portuguese.
 
-### Steps to run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/victorhubarb/organo-v3.git
-   cd organo-v3
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the application:
-   ```bash
-   npm start
-   ```
+## Stack
 
-## Usage
-**Organo v3** allows you to manage your teams visually and organizationally. The application is responsive, and each team member can be viewed on interactive cards that display details such as name, position, and photo.
+React 18, TypeScript 5, Create React App, plain CSS, deployed on Vercel.
 
-## Features
-- **Team Creation**: Add and organize team members.
-- **TypeScript Usage**: Improved type safety and compile-time checks.
-- **Responsive Design**: Supports different screen sizes.
+## Run it locally
 
-## Technologies
-- **React**
-- **TypeScript**
-- **CSS**
+Requires Node.js 18 or newer.
 
-## Contributors
-- [Victor Barbosa](https://github.com/victorhubarb)
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+```bash
+git clone https://github.com/victorhubarb/organo-v3.git
+cd organo-v3
+npm install
+npm start
+```
+
+Opens at `http://localhost:3000`.
+
+## Project structure
+
+```
+src/
+├── App.tsx                  State, team definitions, layout
+├── compartilhado/interfaces/IColaborador.ts
+└── componentes/             Banner, Formulario, CampoTexto, ListaSuspensa,
+                             Botao, Time, Colaborador
+```
+
+## Known gaps
+
+- Cards live in memory and disappear on reload.
+- There is no way to edit or delete a card.
+- The team dropdown's `itens` prop is typed as `string` although it receives a `string[]`, and the start date is not cleared after saving.
+- Cards use the person's name as React `key`, so two people with the same name would collide.
+- The layout has no media queries.
+- A compiled `build/` folder is committed, which should be left to the host and ignored by git.
+- No tests.
+
+---
+
+Victor Hugo Barbosa · [GitHub](https://github.com/victorhubarb) · [LinkedIn](https://www.linkedin.com/in/victorhbarbosa/)
