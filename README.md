@@ -2,6 +2,8 @@
 
 A small team-roster app built with React and TypeScript. You fill in a form with a name, role, photo URL, start date and team, and a card for that person appears under the right team's colored section. This is the third version of the project, and it moves the earlier JavaScript version to TypeScript.
 
+> Built as hands-on practice while following an Alura course.
+
 **Live demo:** [organo-v3.vercel.app](https://organo-v3.vercel.app)
 
 | Home | Form |
