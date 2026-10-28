@@ -4,6 +4,10 @@ A small team-roster app built with React and TypeScript. You fill in a form with
 
 **Live demo:** [organo-v3.vercel.app](https://organo-v3.vercel.app)
 
+| Home | Form |
+|---|---|
+| ![Organo home page](docs/home.png) | ![Organo form with name, role, image, start date and team fields](docs/form.png) |
+
 ## What's inside
 
 - **Typed props and shared models.** Each component has its own props interface, and the collaborator shape is a shared `IColaborador` interface in `src/compartilhado/interfaces`.
